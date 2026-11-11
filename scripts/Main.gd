@@ -19,7 +19,7 @@ var room_scene: PackedScene = preload("res://scenes/Room.tscn")
 
 func _ready() -> void:
 	_load_room(current_coords)
-	player.global_position = Vector3(0.0, -Room.HALF + 0.05, 0.0)
+	player.global_position = Vector3(0.0, -Room.HALF + 0.05, 2.0)
 
 
 func _load_room(coords: Vector3i) -> void:
@@ -32,7 +32,7 @@ func _load_room(coords: Vector3i) -> void:
 func _physics_process(delta: float) -> void:
 	if player == null or current_room == null:
 		return
-	_auto_open()
+	#_auto_open()
 	if conn.is_empty():
 		return
 
